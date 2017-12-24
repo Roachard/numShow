@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <title>Thorb 记忆训练</title>
+    <link rel="shortcut icon" href="//static.smartisanos.cn/common/img/favicon.ico">
+    <link rel="apple-touch-icon" href="//static.smartisanos.cn/common/img/favicon_114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//static.smartisanos.cn/common/img/favicon_76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//static.smartisanos.cn/common/img/favicon_120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="//static.smartisanos.cn/common/img/favicon_152.png">
+    <style>
+        .row h2 span:after{
+            content:" ";
+            display:inline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align: center;">Thorb 记忆训练</h1>
+    <h2 id="here" class="row" style="text-align: center; margin: 0 20px;">
+
+    </h2>
+    <div class="row">
+        <div class="col-md-4 jump" id="team1">
+            <h2 class="row0">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row1">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row2">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row3">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row4">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row5">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row6">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row7">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row8">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row9">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+        </div>
+        <div class="col-md-4" id="team2">
+            <h2 class="row0">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row1">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row2">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row3">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row4">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row5">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row6">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row7">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row8">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row9">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+        </div>
+        <div class="col-md-4" id="team3">
+            <h2 class="row0">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row1">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row2">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row3">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row4">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row5">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row6">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row7">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row8">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+            <h2 class="row9">
+                <span></span><span></span><span></span><span></span><span></span>
+            </h2>
+        </div>
+    </div>
+    <h1 style="text-align: center;">
+        <span id="timer">0</span>
+        <span>秒</span>
+    </h1>
+    <div class="button" style="text-align: center;">
+        <button id="success" class="btn btn-success">开始</button>
+        <button id="danger" class="btn btn-danger">暂停</button>
+        <button id="warning" class="btn btn-warning">重置</button>
+        <button id="primary" class="btn btn-primary">刷新</button>
+        <button id="next" class="btn btn-info">下一组</button>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+<script
+        src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+        crossorigin="anonymous"></script>
+<script>
+    var timer = null;
+    var count = 0;
+    var stop = false;
+    var line = 0;
+    var jumpDuration = 1500;
+    var temp;
+    var arr99={};
+    var arr00={};
+    for(k=0;k<15;k++){
+        arr99[k]=99;
+    }
+    for(k=0;k<15;k++){
+        arr00[k]=0;
+    }
+
+    function generateNum(){
+        var temp = {},k;
+        for (k=0;k<15;k++){
+            temp[k] = parseInt(Math.random()*100);
+        }
+        return temp;
+    }
+    function getNum(){
+        var $row = $(".row"+line),output={},k;
+        $row.find("span").each(function(index,element){
+            output[index] = $(element).text() - 0;
+        });
+        return output;
+
+    }
+
+    function animate() {
+        var randomNum={},row;
+        for (var k=0; k<150; k++) {
+            randomNum[k] = parseInt(Math.random()*100);
+        }
+        for (row = 0;row <= 9 ;row ++){
+            if(row>=line){
+                $(".row"+row)
+                    .find("span")
+                    .each(function(index,span){
+                        temp = randomNum[index + (row * 15)];
+                        $(span).text(temp>=10?temp:"0"+temp);
+                })
+            }
+        }
+        TWEEN.update();
+        if(!stop)requestAnimationFrame(animate);
+    }
+
+    document.getElementById('success').onclick = function () {
+        timer = setInterval(function() {
+            count++;
+            document.getElementById('timer').innerHTML = count;
+    }, 1000);
+    };
+    document.getElementById('danger').onclick = function () {
+        count = parseInt(document.getElementById('timer').innerHTML);
+        clearInterval(timer);
+        timer = null;
+        stop = true;
+    };
+    document.getElementById('warning').onclick = function reset () {
+        count = 0;
+        document.getElementById('timer').innerHTML = count;
+        clearInterval(timer);
+        timer = null;
+    };
+    document.getElementById('primary').onclick = function clear () {
+        document.location.reload();
+    };
+    $("#next").click(function(){
+        nextLine(line);
+        console.log(TWEEN.Easing);
+    });
+
+
+    function nextLine(prevLine){
+        var rows = getNum();
+        var to = generateNum();
+        var jump00to99 = new TWEEN.Tween(Object.assign({},arr00))
+            .easing(TWEEN.Easing.Linear.None)
+            .to(Object.assign({},arr99),350)
+            .onUpdate(function () {
+                var context = this;
+                $(".row"+prevLine)
+                    .find("span")
+                    .each(function(index,span){
+                        temp = context[index].toFixed(0);
+                        $(span).text(temp>=10?temp:"0"+temp);
+                    })
+            });
+        var jump99 = new TWEEN.Tween(rows)
+            .easing(TWEEN.Easing.Linear.None)
+            .to(Object.assign({},arr99),350)
+            .onUpdate(function () {
+                var context = this;
+                $(".row"+prevLine)
+                    .find("span")
+                    .each(function(index,span){
+                        temp = context[index].toFixed(0);
+                        $(span).text(temp>=10?temp:"0"+temp);
+                    })
+            });
+        var goFinal = new TWEEN.Tween(Object.assign({},arr00))
+            .easing(TWEEN.Easing.Quadratic.Out)
+            .to(to, jumpDuration)
+            .onUpdate(function () {
+                var context = this;
+                $(".row"+prevLine)
+                    .find("span")
+                    .each(function(index,span){
+                        temp = context[index].toFixed(0);
+                        $(span).text(temp>=10?temp:"0"+temp);
+                    })
+            });
+        jump99.chain(goFinal);
+        jump99.start();
+        if (line <=9 ){
+            $("h2").css("background-color","transparent");
+            $(".row"+line).css("background-color","yellow");
+            line ++;
+        }
+
+    }
+    animate();
+</script>
+</body>
+</html>

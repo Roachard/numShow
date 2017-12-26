@@ -16,9 +16,28 @@
             content:" ";
             display:inline;
         }
+        img{
+            transition:5s;
+            z-index:10000;
+            position: absolute;
+            width:50%;
+            height:100%;
+        }
+        #img-r{
+            left:50%;
+        }
+        #img-l{
+            left:0;
+            transform:scaleX(-1);
+        }
+        body{
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
+<img id="img-l" src="pic/r.jpg">
+<img id="img-r" src="pic/r.jpg">
 <div class="container">
     <h1 style="text-align: center;">Thorb 记忆训练</h1>
     <h2 id="here" class="row" style="text-align: center; margin: 0 20px;">
@@ -167,7 +186,7 @@
 <script>
 
     var timer = null;
-    var stop = false;
+    var stopped = false;
     var line = 0;
     var jumpDuration = 1500;
     var temp;
@@ -215,7 +234,7 @@
             }
         }
         TWEEN.update();
-        if(!stop)requestAnimationFrame(animate);
+        requestAnimationFrame(animate)
     }
 
     document.getElementById('success').onclick = function () {
@@ -229,9 +248,15 @@
             endTime = (new moment).add(10,'minute');
             timer = setInterval(function(){
                 var timeLeft = endTime.diff(new moment)/1000;
-                var min = Math.floor(timeLeft / 60);
-                var sec = Math.floor(timeLeft - 60*min);
-                $("#timer").text( min+"分 "+sec+"秒");
+                if(timeLeft>0){
+                    var min = Math.floor(timeLeft / 60);
+                    var sec = Math.floor(timeLeft - 60*min);
+                    $("#timer").text( min+"分 "+sec+"秒");
+                }
+                if(!stopped && timeLeft<0){
+                    $("#timer").text("时间到！");
+                    closeDoor();
+                }
             })
 
 
@@ -296,6 +321,17 @@
 
     }
     animate();
+    setTimeout(function(){
+        $("#img-l").css("left","-50%");
+        $("#img-r").css("left","100%");
+    },1000);
+    function closeDoor(){
+        stopped = true;
+        setTimeout(function(){
+            $("#img-l").css("left","0");
+            $("#img-r").css("left","50%");
+        },0);
+    }
 </script>
 </body>
 </html>
